@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="table" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="594.0" prefWidth="744.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taxi.localisationController">
+    <children>
+        <Button fx:id="btndcx" layoutX="604.0" layoutY="11.0" mnemonicParsing="false" onAction="#logout" prefHeight="31.0" prefWidth="123.0" style="-fx-background-color: gray;" text="Deconnexion" textFill="#000000fd" />
+        <TextField fx:id="searchL" layoutX="372.0" layoutY="27.0" promptText=" Rechercher..." style="-fx-background-color: gray;" />
+        <TableView fx:id="LocTable" layoutX="269.0" layoutY="156.0" prefHeight="400.0" prefWidth="463.0" style="-fx-background-color: grey;">
+            <columns>
+                <TableColumn fx:id="cln_idL" prefWidth="56.0" text="Id" />
+            <TableColumn fx:id="cln_clientL" prefWidth="75.0" text="client" />
+            <TableColumn fx:id="cln_chauffL" prefWidth="81.0" text="chauffeur" />
+                <TableColumn fx:id="cln_depart" minWidth="7.0" prefWidth="89.0" text="Depart" />
+            <TableColumn fx:id="cln_arrivee" prefWidth="73.0" text="Arrivee" />
+                <TableColumn fx:id="cln_dateL" prefWidth="87.0" text="Date" />
+            </columns>
+        </TableView>
+        <Label fx:id="label" layoutX="124.0" layoutY="17.0" prefHeight="37.0" prefWidth="215.0" style="-fx-background-color: black;" text="Taroudant Express" textFill="#c9a30c">
+            <font>
+                <Font name="Tw Cen MT" size="29.0" />
+            </font>
+        </Label>
+        <Button fx:id="acceuil" layoutX="39.0" layoutY="107.0" mnemonicParsing="false" onAction="#open" prefHeight="31.0" prefWidth="90.0" style="-fx-background-color: grey;" text="Acceuil" />
+        <Button fx:id="localisation" layoutX="631.0" layoutY="107.0" mnemonicParsing="false" onAction="#openLocalisation" prefHeight="31.0" prefWidth="90.0" style="-fx-background-color: #ffc107;" text="  Localisation">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+        <Button fx:id="taxi" layoutX="140.0" layoutY="107.0" mnemonicParsing="false" onAction="#openTaxi" prefHeight="31.0" prefWidth="90.0" style="-fx-background-color: grey;" text="Taxis" />
+        <Button fx:id="client" layoutX="339.0" layoutY="107.0" mnemonicParsing="false" onAction="#openClients" prefHeight="31.0" prefWidth="90.0" style="-fx-background-color: grey;" text="Clients" />
+        <Button fx:id="chauffeur" layoutX="242.0" layoutY="107.0" mnemonicParsing="false" onAction="#openChauffeurs" prefHeight="31.0" prefWidth="90.0" style="-fx-background-color: grey;" text="Chauffeurs" />
+        <Button fx:id="demande" layoutX="439.0" layoutY="107.0" mnemonicParsing="false" onAction="#openDemandes" prefHeight="31.0" prefWidth="90.0" style="-fx-background-color: grey;" text="Demande" />
+        <Button fx:id="fact" layoutX="538.0" layoutY="107.0" mnemonicParsing="false" onAction="#openFactures" prefHeight="31.0" prefWidth="84.0" style="-fx-background-color: grey;" text="Factures" />
+        <Button fx:id="modifierL" layoutX="84.0" layoutY="492.0" mnemonicParsing="false" onAction="#Modifier" onMouseClicked="#UpdateL" prefHeight="25.0" prefWidth="111.0" style="-fx-background-color: #ffc107;" text="Modifier">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Button>
+        <Button fx:id="suppL" layoutX="84.0" layoutY="535.0" mnemonicParsing="false" onAction="#Supprimer" onMouseClicked="#SuppL" prefHeight="25.0" prefWidth="111.0" style="-fx-background-color: red;" text="Supprimer" />
+        <Button fx:id="ajouterL" layoutX="85.0" layoutY="450.0" mnemonicParsing="false" onAction="#Ajouter" onMouseClicked="#addL" prefHeight="27.0" prefWidth="111.0" style="-fx-background-color: green;" text="Ajouter" textFill="#070700">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Button>
+        <TextField fx:id="idL" layoutX="65.0" layoutY="191.0" promptText="entrer id" />
+        <TextField fx:id="dep" layoutX="66.0" layoutY="310.0" promptText="entrer point depart" />
+        <Button fx:id="searchLocal" layoutX="529.0" layoutY="27.0" mnemonicParsing="false" onAction="#searchL" onMouseClicked="#searchLocalisation" prefHeight="25.0" prefWidth="68.0" text="chercher" />
+        <ImageView fitHeight="15.0" fitWidth="18.0" layoutX="43.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@images/icons8-accueil-24.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="15.0" fitWidth="18.0" layoutX="143.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@images/icons8-taxi-30.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="15.0" fitWidth="26.0" layoutX="242.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@images/icons8-volant-48.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="15.0" fitWidth="18.0" layoutX="342.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@images/icons8-conférence-téléphonique-24.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="15.0" fitWidth="18.0" layoutX="439.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@images/icons8-google-forms-50.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="15.0" fitWidth="18.0" layoutX="540.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@images/icons8-facture-payée-50.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="15.0" fitWidth="18.0" layoutX="631.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@images/icons8-marqueur-24.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="15.0" fitWidth="18.0" layoutX="99.0" layoutY="424.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@images/icons8-plus-30.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="15.0" fitWidth="18.0" layoutX="99.0" layoutY="477.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@images/icons8-crayon-30.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="15.0" fitWidth="18.0" layoutX="99.0" layoutY="540.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@images/icons8-supprimer-30.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="25.0" fitWidth="26.0" layoutX="488.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@images/icons8-google-web-recherche-48.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="74.0" fitWidth="89.0" layoutX="15.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@images/icons8-taxi-48.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="25.0" fitWidth="15.0" layoutX="614.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@images/icons8-déconnexion-30.png" />
+            </image>
+        </ImageView>
+      <DatePicker fx:id="dateL" layoutX="66.0" layoutY="398.0" prefHeight="26.0" prefWidth="150.0" promptText="entrer la date" />
+      <TextField fx:id="arriv" layoutX="65.0" layoutY="356.0" promptText="entrer point d'arrivee" />
+      <TextField fx:id="clientL" layoutX="66.0" layoutY="230.0" promptText="entrer client" />
+      <TextField fx:id="chauffL" layoutX="66.0" layoutY="272.0" promptText="entrer chauffeur" />
+    </children>
+</AnchorPane>
